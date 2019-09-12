@@ -1,6 +1,9 @@
 # best-practices
 This is the assignment for cultivating good habit while building python projects. The practices are *style correction*, *argparse utilization*, *exception handling*, and *testing*.
 
+## Continuous Integration Status
+![](https://travis-ci.com/cu-swe4s-fall-2019/best-practices-Sayter99.svg?branch=master)
+
 ## Installation
 To use this package, you need to have [Python3](https://www.python.org/download/releases/3.0/) in your environment.
 
