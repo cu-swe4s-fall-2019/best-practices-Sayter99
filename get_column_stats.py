@@ -36,6 +36,39 @@ def parse_args():
     return parser.parse_args()
 
 
+def get_mean(V):
+    # verify the input is a list containing only numbers
+    if (isinstance(V, list)):
+        for i in V:
+            if not (isinstance(i, int) or isinstance(i, float)):
+                print('Please input a list containing numbers')
+                return None
+    # if it is an empty list, return None
+    if (len(V) == 0):
+        print('Empty list')
+        return None
+    # return mean
+    return sum(V) / len(V)
+
+
+def get_stdev(V):
+    # verify the input is a list containing only numbers
+    if (isinstance(V, list)):
+        for i in V:
+            if not (isinstance(i, int) or isinstance(i, float)):
+                print('Please input a list containing numbers')
+                return None
+    # if it is an empty list, return None
+    if (len(V) == 0):
+        print('Empty list')
+        return None
+    # if mean is None, return None
+    mean = get_mean(V)
+    if mean is None:
+        return None
+    return math.sqrt(sum([(mean-x)**2 for x in V]) / len(V))
+
+
 if __name__ == '__main__':
     # get argument by arg parser
     args = parse_args()
@@ -76,15 +109,7 @@ if __name__ == '__main__':
             print('Invalid Column Number')
             sys.exit(1)
 
-    # deal with empty V and calculate (mean, stdev)
-    if (len(V) != 0):
-        mean = sum(V)/len(V)
-        stdev = math.sqrt(sum([(mean-x)**2 for x in V]) / len(V))
-    else:
-        mean = 0
-        stdev = 0
-
     # show results
-    print('mean:', mean)
-    print('stdev:', stdev)
+    print('mean:', get_mean(V))
+    print('stdev:', get_stdev(V))
     sys.exit()

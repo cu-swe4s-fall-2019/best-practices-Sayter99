@@ -10,11 +10,13 @@ To use this package, you need to have [Python3](https://www.python.org/download/
 * sys
 * math
 * pycodestyle
+* unittest
 
 ## Usage
-To verify the results, run `basics_test.sh` directly:
+To verify the test results, run `basics_test.sh` and `basics_test.py`:
 ```bash
 bash basics_test.sh
+python basics_test.py
 ```
 
 ## Changes in this assignment
@@ -27,3 +29,6 @@ bash basics_test.sh
 * Modify the test script to demonstrate that `get_column_stats.py` conforms to the best practices
     * test with `ssshtest`
     * add tests for `exception handling` and `argparse utilization`
+* Add `basics_test.py` to do unit tests
+    * test both constant and random numbers
+    * test exceptions
