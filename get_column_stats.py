@@ -48,7 +48,7 @@ def get_mean(V):
         print('Empty list')
         return None
     # return mean
-    return sum(V) / len(V)
+    return float(sum(V)) / float(len(V))
 
 
 def get_stdev(V):
@@ -66,7 +66,8 @@ def get_stdev(V):
     mean = get_mean(V)
     if mean is None:
         return None
-    return math.sqrt(sum([(mean-x)**2 for x in V]) / len(V))
+    _sum = float(sum([(float(mean)-float(x))**2 for x in V]))
+    return math.sqrt(_sum / float(len(V)-1))
 
 
 if __name__ == '__main__':
